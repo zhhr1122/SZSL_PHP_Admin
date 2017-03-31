@@ -1,0 +1,195 @@
+<?php
+ $config = D("Basic")->select();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{$config.title}</title>
+  <meta name="keywords" content="{$config.keywords}"/>
+  <meta name="description" content="{$config.description}"/>
+
+  <link href="../Public/css/index.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../Public/css/nivo-slider.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../Public/css/styles.css" type="text/css" media="screen" />
+  <script src="../Public/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="../Public/css/Vizo-style.css"/>
+  <script type="text/javascript" src="../Public/js/jquery-1.6.2.min.js"></script>
+
+
+  <script type="text/javascript">
+      var currentindexa=1;
+      $(".flashBg").css("background-color",$("#flasha1").attr("name"));
+      function changeflasha(i) {
+          currentindexa=i;
+          for (j=1;j<=1;j++){
+              if (j==i)
+              {$("#flasha"+j).fadeIn("normal");
+                  $("#flasha"+j).css("display","block");
+                  $("#a"+j).removeClass();
+                  $("#a"+j).addClass("dq");
+                  $(".flashBg").css("background-color",$("#flasha"+j).attr("name"));
+              }
+              else
+              {$("#flasha"+j).css("display","none");
+                  $("#a"+j).removeClass();
+                  $("#a"+j).addClass("no");}
+          }}
+      function startAma(){
+          timerIDa = setInterval("timer_ticka()",8000);//8000代表间隔时间设置
+      }
+      function stopAma(){
+          clearInterval(timerIDa);
+      }
+      function timer_ticka() {
+          currentindexa=currentindexa>=1?1:currentindexa+1;//此处的5代表幻灯片循环遍历的次数
+          changeflasha(currentindexa);}
+      $(document).ready(function(){
+          $(".flash_bar div").mouseover(function(){stopAma();}).mouseout(function(){startAma();});
+          startAma();
+      });
+
+      var currentindexb=1;
+      $(".flashBg").css("background-color",$("#flashb1").attr("name"));
+      function changeflashb(i) {
+          currentindexb=i;
+          for (j=1;j<=1;j++){
+              if (j==i)
+              {$("#flashb"+j).fadeIn("normal");
+                  $("#flashb"+j).css("display","block");
+                  $("#b"+j).removeClass();
+                  $("#b"+j).addClass("dq");
+                  $(".flashBg").css("background-color",$("#flashb"+j).attr("name"));
+              }
+              else
+              {$("#flashb"+j).css("display","none");
+                  $("#b"+j).removeClass();
+                  $("#b"+j).addClass("no");}
+          }}
+      function startAmb(){
+          timerIDb = setInterval("timer_tickb()",8000);//8000代表间隔时间设置
+      }
+      function stopAmb(){
+          clearInterval(timerIDb);
+      }
+      function timer_tickb() {
+          currentindexb=currentindexb>=1?1:currentindexb+1;
+          changeflashb(currentindexb);}
+      $(document).ready(function(){
+          $(".flash_bar div").mouseover(function(){stopAmb();}).mouseout(function(){startAmb();});
+          startAmb();
+      });
+
+      var currentindexc=1;
+      $(".flashBg").css("background-color",$("#flashc1").attr("name"));
+      function changeflashc(i) {
+          currentindexc=i;
+          for (j=1;j<=1;j++){
+              if (j==i)
+              {$("#flashc"+j).fadeIn("normal");
+                  $("#flashc"+j).css("display","block");
+                  $("#c"+j).removeClass();
+                  $("#c"+j).addClass("dq");
+                  $(".flashBg").css("background-color",$("#flashc"+j).attr("name"));
+              }
+              else
+              {$("#flashc"+j).css("display","none");
+                  $("#c"+j).removeClass();
+                  $("#c"+j).addClass("no");}
+          }}
+      function startAmc(){
+          timerIDc = setInterval("timer_tickc()",8000);
+      }
+      function stopAmc(){
+          clearInterval(timerIDc);
+      }
+      function timer_tickc() {
+          currentindexc=currentindexc>=1?1:currentindexc+1;
+          changeflashc(currentindexc);}
+      $(document).ready(function(){
+          $(".flash_bar div").mouseover(function(){stopAmc();}).mouseout(function(){startAmc();});
+          startAmc();
+      });
+
+      var currentindex=1;
+      $("#flashBg").css("background-color",$("#flash1").attr("name"));
+      function changeflash(i) {
+          currentindex=i;
+          for (j=1;j<=3;j++){
+              if (j==i)
+              {$("#flash"+j).fadeIn("normal");
+                  $("#flash"+j).css("display","block");
+                  $("#f"+j).removeClass();
+                  $("#f"+j).addClass("dq");
+                  $("#flashBg").css("background-color",$("#flash"+j).attr("name"));
+              }
+              else
+              {$("#flash"+j).css("display","none");
+                  $("#f"+j).removeClass();
+                  $("#f"+j).addClass("no");}
+          }}
+      function startAm(){
+          timerID = setInterval("timer_tick()",8000);
+      }
+      function stopAm(){
+          clearInterval(timerID);
+      }
+      function timer_tick() {
+          currentindex=currentindex>=3?1:currentindex+1;
+          changeflash(currentindex);}
+      $(document).ready(function(){
+          $(".flash_bar div").mouseover(function(){stopAm();}).mouseout(function(){startAm();});
+          startAm();
+      });
+      //]]>
+  </script>
+
+
+
+</head>
+<body>
+<include file="Index/header" />
+<div style="z-index:1000; width:955px;position:relative; margin:0 auto; padding:0px;">
+  <div style="position:absolute;z-index:1000;top:522px;">
+    <foreach name="result['topSmallNews']" item ="vo">
+      <div class="left" style="margin:0 10px;">
+        <table width="229" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+          <a href="/index.php?c=detail&id={$vo.news_id}" id="flashb1" style="display:block;"><img src="{$vo.thumb}" width="229" height="160"></a>
+        </table>
+      </div>
+    </foreach>
+
+
+  </div></div><!--产业 -->
+
+<!--Slide & Banner  Start-->
+<div id="Slidebox">
+  <!--flash begin-->
+  <div id="flashBg">
+    <div id="flashLine">
+      <div id="flash">
+        <volist  name="result['topPicNews']" id ="vo">
+          <a href="/index.php?c=detail&id={$vo.news_id}" id="flash{$i}" <if condition="$i eq 1">style="display:block;"</if>><img src="{$vo.thumb}" width="100%" height="734"></a>
+        </volist>
+
+        <div class="flash_bar">
+
+          <div class="dq" id="f1" onclick="changeflash(1)"></div>
+
+          <div class="no" id="f2" onclick="changeflash(2)"></div>
+
+          <div class="no" id="f3" onclick="changeflash(3)"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--flash end-->
+</div>
+<!--Slide & Banner  End-->
+<include file="Index/footer" />
+</body>
+<script src="/Public/js/jquery.js"></script>
+<script src="/Public/js/conut.js">
+</script>
+</html>

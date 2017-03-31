@@ -1,0 +1,39 @@
+<?php
+ $config = D("Basic")->select();
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>{$config.title}</title>
+<meta name="keywords" content="{$config.keywords}" />
+<meta name="description" content="{$config.description}" />
+<link rel="stylesheet" href="/Public/css/bootstrap.min.css"
+	type="text/css" />
+<link rel="stylesheet" href="/Public/css/home/main.css" type="text/css" />
+</head>
+<body>
+	<include file="Index/header" />
+	<div id="newsbanner">
+		<div class="banner982">
+			<div class="new_bj">
+				<div class="newtit">联系我们</div>
+				<div id="pr-le">
+
+				</div>
+				<!--pr-le-->
+			</div>
+		</div>
+	</div>
+	<div id="main">
+		<div class="loction">当前位置: <a href="/">首页</a> > 公司简介</div>
+		<div id="main_cont">
+			<div class="news_xtitzi">公司简介</div>
+			<div style="text-align:center">日期：{$news.update_time|date="Y-m-d
+				H:i:s",###}</div>
+			{$news.content}
+		</div><!--main_cont -->
+	</div><!--main -->
+	<include file="Index/footer" />
+</body>
+</html>
