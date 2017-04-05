@@ -62,7 +62,7 @@ li, ul{padding:0;margin:0;list-style:none;}
 
 #main{clear:both;background:url(../images/rbg.jpg) repeat-x center top;width:100%;height:100%;padding-top:13px;}
 .loction{width:982px;margin:0 auto;margin-bottom:13px;font-size:12px;}
-#main_cont{width:922px;margin:0 auto 20px auto;border:1px solid #E0E0E0;padding:30px 30px; min-height:190px;}
+#main_cont{width:922px;margin:0 auto 20px auto;border:1px solid #E0E0E0;padding:30px 30px; min-height:400px;}
 .news_xixian{height:188px;padding-bottom:20px;border-bottom:1px solid #E8E8E8;margin-bottom:20px;}
 .news_tu{float:left;width:250px;margin-right:20px;}
 .news_tuzi{float:left;width:652px;}
